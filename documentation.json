@@ -1127,7 +1127,7 @@
         },
         {
             "name": "TaskComponent",
-            "id": "component-TaskComponent-c96128c7428f56953e5088adaa9e6828fb7eaae7db5ed8dcd8b13dbb92192dbc15657f446b15f3b5fac929d47f65b52447db7f6bad1e154f0d79484fd0e8377a",
+            "id": "component-TaskComponent-dacbb1bccc25232f74c39a26ad46ac36dd562fa2cac75d00d3f90a95bbc266242563887ed61e8358ee74eadd36e25eb70a3c29b3d1627862d6e542f9a51c970b",
             "file": "src/app/components/task.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1137,7 +1137,7 @@
             "selector": "app-task",
             "styleUrls": [],
             "styles": [],
-            "template": "<div class=\"list-item {{ task?.state }}\">\n  <label\n    [attr.aria-label]=\"'archiveTask-' + task?.id\"\n    for=\"checked-{{ task?.id }}\"\n    class=\"checkbox\"\n  >\n    <input\n      type=\"checkbox\"\n      disabled=\"true\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      name=\"checked-{{ task?.id }}\"\n      id=\"checked-{{ task?.id }}\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task?.id)\"></span>\n  </label>\n  <label\n    [attr.aria-label]=\"task?.title + ''\"\n    for=\"title-{{ task?.id }}\"\n    class=\"title\"\n  >\n    <input\n      type=\"text\"\n      [value]=\"task?.title\"\n      readonly=\"true\"\n      id=\"title-{{ task?.id }}\"\n      name=\"title-{{ task?.id }}\"\n      placeholder=\"Input title\"\n    />\n  </label>\n  <button\n    *ngIf=\"task?.state !== 'TASK_ARCHIVED'\"\n    class=\"pin-button\"\n    [attr.aria-label]=\"'pinTask-' + task?.id\"\n    (click)=\"onPin(task?.id)\"\n  >\n    <span class=\"icon-star\"></span>\n  </button>\n</div>\n",
+            "template": "<div class=\"list-item {{ task?.state }}\">\n  <label\n    [attr.aria-label]=\"'archiveTask-' + task?.id\"\n    for=\"checked-{{ task?.id }}\"\n    class=\"checkbox\"\n  >\n    <input\n      type=\"checkbox\"\n      disabled=\"true\"\n      [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\n      name=\"checked-{{ task?.id }}\"\n      id=\"checked-{{ task?.id }}\"\n    />\n    <span class=\"checkbox-custom\" (click)=\"onArchive(task?.id)\"></span>\n  </label>\n  <label\n    [attr.aria-label]=\"task?.title + ''\"\n    for=\"title-{{ task?.id }}\"\n    class=\"title\"\n  >\n    <input\n      type=\"text\"\n      [value]=\"task?.title\"\n      readonly=\"true\"\n      id=\"title-{{ task?.id }}\"\n      name=\"title-{{ task?.id }}\"\n      placeholder=\"Input title\"\n      style=\"background-color: red;\"\n    />\n  </label>\n  <button\n    *ngIf=\"task?.state !== 'TASK_ARCHIVED'\"\n    class=\"pin-button\"\n    [attr.aria-label]=\"'pinTask-' + task?.id\"\n    (click)=\"onPin(task?.id)\"\n  >\n    <span class=\"icon-star\"></span>\n  </button>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1148,7 +1148,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nThe shape of the task object\n",
                     "description": "<p>The shape of the task object</p>\n",
-                    "line": 52,
+                    "line": 53,
                     "type": "Task",
                     "decorators": []
                 }
@@ -1159,7 +1159,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 60,
+                    "line": 61,
                     "type": "EventEmitter"
                 },
                 {
@@ -1167,7 +1167,7 @@
                     "defaultValue": "new EventEmitter<Event>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 56,
+                    "line": 57,
                     "type": "EventEmitter"
                 }
             ],
@@ -1182,7 +1182,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { Task } from '../models/task.model';\r\n\r\n@Component({\r\n  selector: 'app-task',\r\n  standalone: false,\r\n  template: `\r\n    <div class=\"list-item {{ task?.state }}\">\r\n      <label\r\n        [attr.aria-label]=\"'archiveTask-' + task?.id\"\r\n        for=\"checked-{{ task?.id }}\"\r\n        class=\"checkbox\"\r\n      >\r\n        <input\r\n          type=\"checkbox\"\r\n          disabled=\"true\"\r\n          [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n          name=\"checked-{{ task?.id }}\"\r\n          id=\"checked-{{ task?.id }}\"\r\n        />\r\n        <span class=\"checkbox-custom\" (click)=\"onArchive(task?.id)\"></span>\r\n      </label>\r\n      <label\r\n        [attr.aria-label]=\"task?.title + ''\"\r\n        for=\"title-{{ task?.id }}\"\r\n        class=\"title\"\r\n      >\r\n        <input\r\n          type=\"text\"\r\n          [value]=\"task?.title\"\r\n          readonly=\"true\"\r\n          id=\"title-{{ task?.id }}\"\r\n          name=\"title-{{ task?.id }}\"\r\n          placeholder=\"Input title\"\r\n        />\r\n      </label>\r\n      <button\r\n        *ngIf=\"task?.state !== 'TASK_ARCHIVED'\"\r\n        class=\"pin-button\"\r\n        [attr.aria-label]=\"'pinTask-' + task?.id\"\r\n        (click)=\"onPin(task?.id)\"\r\n      >\r\n        <span class=\"icon-star\"></span>\r\n      </button>\r\n    </div>\r\n  `\r\n})\r\nexport default class TaskComponent {\r\n  /**\r\n   * The shape of the task object\r\n  */\r\n  @Input() task?: Task;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n   * @ignore\r\n   * Component method to trigger the onPin event\r\n   * @param id string\r\n   */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n   * @ignore\r\n   * Component method to trigger the onArchive event\r\n   * @param id string\r\n   */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}\r\n",
+            "sourceCode": "import { Component, EventEmitter, Input, Output } from '@angular/core';\r\nimport { Task } from '../models/task.model';\r\n\r\n@Component({\r\n  selector: 'app-task',\r\n  standalone: false,\r\n  template: `\r\n    <div class=\"list-item {{ task?.state }}\">\r\n      <label\r\n        [attr.aria-label]=\"'archiveTask-' + task?.id\"\r\n        for=\"checked-{{ task?.id }}\"\r\n        class=\"checkbox\"\r\n      >\r\n        <input\r\n          type=\"checkbox\"\r\n          disabled=\"true\"\r\n          [defaultChecked]=\"task?.state === 'TASK_ARCHIVED'\"\r\n          name=\"checked-{{ task?.id }}\"\r\n          id=\"checked-{{ task?.id }}\"\r\n        />\r\n        <span class=\"checkbox-custom\" (click)=\"onArchive(task?.id)\"></span>\r\n      </label>\r\n      <label\r\n        [attr.aria-label]=\"task?.title + ''\"\r\n        for=\"title-{{ task?.id }}\"\r\n        class=\"title\"\r\n      >\r\n        <input\r\n          type=\"text\"\r\n          [value]=\"task?.title\"\r\n          readonly=\"true\"\r\n          id=\"title-{{ task?.id }}\"\r\n          name=\"title-{{ task?.id }}\"\r\n          placeholder=\"Input title\"\r\n          style=\"background-color: red;\"\r\n        />\r\n      </label>\r\n      <button\r\n        *ngIf=\"task?.state !== 'TASK_ARCHIVED'\"\r\n        class=\"pin-button\"\r\n        [attr.aria-label]=\"'pinTask-' + task?.id\"\r\n        (click)=\"onPin(task?.id)\"\r\n      >\r\n        <span class=\"icon-star\"></span>\r\n      </button>\r\n    </div>\r\n  `\r\n})\r\nexport default class TaskComponent {\r\n  /**\r\n   * The shape of the task object\r\n  */\r\n  @Input() task?: Task;\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onPinTask = new EventEmitter<Event>();\r\n\r\n  // tslint:disable-next-line: no-output-on-prefix\r\n  @Output()\r\n  onArchiveTask = new EventEmitter<Event>();\r\n\r\n  /**\r\n   * @ignore\r\n   * Component method to trigger the onPin event\r\n   * @param id string\r\n   */\r\n  onPin(id: any) {\r\n    this.onPinTask.emit(id);\r\n  }\r\n  /**\r\n   * @ignore\r\n   * Component method to trigger the onArchive event\r\n   * @param id string\r\n   */\r\n  onArchive(id: any) {\r\n    this.onArchiveTask.emit(id);\r\n  }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
